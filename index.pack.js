@@ -420,6 +420,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function App() {
     var cards = _data2.default.map(function (card) {
         return _react2.default.createElement(_Card2.default, {
+            ket: card.id,
             img: card.coverImg,
             rating: card.stats.rating,
             reviewCount: card.stats.reviewCount,
