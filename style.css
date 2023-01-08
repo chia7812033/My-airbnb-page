@@ -7,13 +7,14 @@ body {
     font-family: Poppins;
     display: grid;
     justify-content: center;
-    padding: 50px;
+    padding-top: 50px;
 }
 
 #root {
     border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     max-width: 80%;
+    margin-bottom: 50px;
 }
 
 .nav {
