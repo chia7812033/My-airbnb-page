@@ -420,14 +420,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function App() {
     var cards = _data2.default.map(function (card) {
         return _react2.default.createElement(_Card2.default, {
-            ket: card.id,
-            img: card.coverImg,
-            rating: card.stats.rating,
-            reviewCount: card.stats.reviewCount,
-            country: card.location,
-            title: card.title,
-            price: card.price,
-            openSpots: card.openSpots
+            key: card.id,
+            card: card
         });
     });
     return _react2.default.createElement(
@@ -509,15 +503,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Card(props) {
   var badgeText = void 0;
-  if (props.openSpots === 0) {
+  if (props.card.openSpots === 0) {
     badgeText = "SOLD OUT";
-  } else if (props.country === "Online") {
+  } else if (props.card.location === "Online") {
     badgeText = "ONLINE";
   }
+
   return _react2.default.createElement(
     "div",
     { className: "card" },
-    _react2.default.createElement("img", { src: "./images/" + props.img, className: "card--img" }),
+    _react2.default.createElement("img", { src: "./images/" + props.card.coverImg, className: "card--img" }),
     badgeText && _react2.default.createElement(
       "button",
       { className: "card--info" },
@@ -533,22 +528,22 @@ function Card(props) {
         _react2.default.createElement(
           "h6",
           null,
-          props.rating
+          props.card.stats.rating
         ),
         _react2.default.createElement(
           "h6",
           { className: "card--number" },
           "(",
-          props.reviewCount,
+          props.card.stats.reviewCount,
           ")-",
-          props.country
+          props.card.location
         )
       )
     ),
     _react2.default.createElement(
       "div",
       null,
-      props.title
+      props.card.title
     ),
     _react2.default.createElement(
       "div",
@@ -557,7 +552,7 @@ function Card(props) {
         "b",
         null,
         "From $",
-        props.price
+        props.card.price
       ),
       " / person"
     )

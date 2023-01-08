@@ -8,14 +8,8 @@ import data from "./data"
 export default function App() {
     const cards = data.map(card => {
         return <Card
-            ket={card.id}
-            img={card.coverImg}
-            rating={card.stats.rating}
-            reviewCount={card.stats.reviewCount}
-            country={card.location}
-            title={card.title}
-            price={card.price}
-            openSpots={card.openSpots}
+            key={card.id}
+            card={card}
         />
     })
     return (
