@@ -5,16 +5,14 @@
 body {
     margin: 0;
     font-family: Poppins;
-    display: flex;
+    display: grid;
     justify-content: center;
-    padding-top: 60px;
+    padding: 50px;
 }
 
 #root {
     border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    max-width: 50%;
-
 }
 
 .nav {
