@@ -30612,7 +30612,7 @@ function Card(props) {
   return _react2.default.createElement(
     "div",
     { className: "card" },
-    _react2.default.createElement("img", { src: "../images/" + props.img, className: "card--img" }),
+    _react2.default.createElement("img", { src: "./images/" + props.img, className: "card--img" }),
     _react2.default.createElement(
       "button",
       { className: "card--info" },
