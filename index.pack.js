@@ -426,7 +426,8 @@ function App() {
             reviewCount: card.stats.reviewCount,
             country: card.location,
             title: card.title,
-            price: card.price
+            price: card.price,
+            openSpots: card.openSpots
         });
     });
     return _react2.default.createElement(
@@ -507,14 +508,20 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Card(props) {
+  var badgeText = void 0;
+  if (props.openSpots === 0) {
+    badgeText = "SOLD OUT";
+  } else if (props.country === "Online") {
+    badgeText = "ONLINE";
+  }
   return _react2.default.createElement(
     "div",
     { className: "card" },
     _react2.default.createElement("img", { src: "./images/" + props.img, className: "card--img" }),
-    _react2.default.createElement(
+    badgeText && _react2.default.createElement(
       "button",
       { className: "card--info" },
-      "Sold out"
+      badgeText
     ),
     _react2.default.createElement(
       "div",
